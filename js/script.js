@@ -102,6 +102,7 @@ function checkWinner() {
             spacesToChoose[winStates[i][0] - 1].classList.add("win");
             spacesToChoose[winStates[i][1] - 1].classList.add("win");
             spacesToChoose[winStates[i][2] - 1].classList.add("win");
+            gameStarted = false;
             restartBtn.classList.add("unclickable");
             reloadBtn.classList.add("unclickable");
             titleMessage.innerText = "O wins!";
@@ -118,6 +119,7 @@ function checkWinner() {
             spacesToChoose[winStates[i][0] - 1].classList.add("win");
             spacesToChoose[winStates[i][1] - 1].classList.add("win");
             spacesToChoose[winStates[i][2] - 1].classList.add("win");
+            gameStarted = false;
             restartBtn.classList.add("unclickable");
             reloadBtn.classList.add("unclickable");
             titleMessage.innerText = "X wins!";
@@ -138,6 +140,7 @@ function checkWinner() {
                 }
             }
             if (draw) {
+                gameStarted = false;
                 restartBtn.classList.add("unclickable");
                 reloadBtn.classList.add("unclickable");
                 results.draw++;
