@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <title>Tic-tac-toe GAME</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/x-icon" href="./images/circle.png">
+</head>
+<body class="containeer">
+    <section class="body">
+        <h1>Tic tac toe</h1>
+        <h3>Game</h3>
+        <p id="title-message">Ready to start!</p>
+        <div id="status-container" class="status-container hidden">
+            <p id="circle-score"><span>O</span>
+                <br>wins</p>
+            <p id="cross-score"><span>X</span>
+                <br>wins</p>
+            <p id="draw-score"><span>-</span>
+                <br>draws</p>
+        </div>
+        <div class="boxes-container">
+            <div>
+                <div class="box green" id="1"></div>
+                <div class="box red" id="2"></div>
+                <div class="box green" id="3"></div>
+            </div>
+            <div>
+                <div class="box red" id="4"></div>
+                <div class="box green" id="5"></div>
+                <div class="box red" id="6"></div>
+            </div>
+            <div>
+                <div class="box red" id="7"></div>
+                <div class="box green" id="8"></div>
+                <div class="box green" id="9"></div>
+            </div>
+        </div>
+        <div id="switch-container" class="switch-container hidden">
+            <input type="checkbox" id="switch" class="switch">
+            <label for="switch">Vez do</label>
+        </div>
+        <div class="btn-container">
+            <button class="btn-start" id="startBtn" onclick="gameStart()">Start</button>
+        </div>
+        <div id="reload-container" class="reload-container hidden">
+            <button id="restart-icon" onclick="restartGame()">
+                <img src="./images/restart.png" alt="reload game icon" draggable="false"></button>
+            <button id="reload-icon" class="unclickable" onclick="reloadGame()">
+                <img src="./images/skull.png" alt="reload game icon" draggable="false"></button>
+        </div>
+    </section>
+    <script src="./js/script.js"></script>
+</body>
+</html>

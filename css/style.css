@@ -1,0 +1,255 @@
+body {
+    background-color: #221056;
+    font-family: 'Fjalla One', sans-serif;
+    background-image: url(../images/cancel.png);
+}
+
+.body {
+    width: fit-content;
+    margin: 3rem auto;
+    background: linear-gradient(45deg, #FFFFFF00, #342186, #6549B9, #FFFFFF00);
+    border-radius: 5px;
+    padding: 2rem;
+    animation: gradient 5s ease infinite;
+    background-size: 400% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+    margin-top: 2rem;
+    font-size: 70px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 900;
+}
+
+h3 {
+    color: white;
+    font-size: 70px;
+    text-transform: uppercase;
+    background-color: #42CF91;
+    transform: rotateZ(-5deg);
+    width: fit-content;
+    padding: .1rem .7rem;
+    border-radius: 1px;
+    margin: 1.5rem;
+}
+
+#title-message {
+    color: white;
+    margin: .5rem 0;
+    font-size: 18px;
+}
+
+.status-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: 1rem 0;
+    gap: 1.5rem;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.status-container > p:nth-child(1) {
+    color: #42CF91;
+}
+
+.status-container > p:nth-child(2) {
+    color: #DD3D3E;
+}
+
+.status-container > p:nth-child(3) {
+    color: #F5F5F5;
+}
+
+.boxes-container {
+    display: flex;
+    justify-content: center;
+    background-color: #6549B9;
+    border-radius: 5px;
+    border: solid 1px #FFFFFF10;
+    position: relative;
+    cursor: pointer;
+}
+
+.box {
+    border-radius: 5px;
+    color: white;
+    font-size: 60px;
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+    background-color: #312164;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch-container {
+    margin-top: 2rem;
+    position: relative;
+    height: 65px;
+    width: 100%;
+    text-align: center;
+}
+
+.switch + label {
+    color: white;
+    text-transform: uppercase;
+}
+
+.switch {
+    appearance: none;
+    width: 100px;
+    height: 30px;
+    background-color: #FFFFFF20;
+    border: solid 1px #FFFFFF20;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 35px;
+    background-color: #42CF91;
+    border-radius: 5px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.switch:checked::before {
+    left: 0;
+    background-color: #DD3D3E;
+}
+
+.switch::after {
+    content: '';
+    background-image: url(../images/circle.png);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+}
+
+.switch:checked::after {
+    left: 0px;
+    background-image: url(../images/cross.png);
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.btn-container {
+    margin-top: 1.5rem;
+}
+
+.btn-start {
+    background-color: #3EE66D;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.reload-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#restart-icon:hover {
+    transform: rotate(90deg);
+}
+
+#reload-icon:hover {
+    transform: scale(1.1);
+}
+
+#reload-icon,
+#restart-icon {
+    width: 36px;
+    height: 36px;
+    background-color: #6549B9;
+    border-radius: 50%;
+    transition: .5s;
+    border: solid 1px #FFFFFF40;
+    cursor: pointer;
+}
+
+#reload-icon > img,
+#restart-icon > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.box.green {
+    background-image: url(../images/circle.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #42CF91;
+}
+
+.box.red {
+    background-image: url(../images/cross.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #DD3D3E;
+}
+
+.win {
+    animation: zoom .5s ease-in-out infinite alternate;
+}
+
+@keyframes zoom {
+    from {
+        background-size: 60%;
+    }
+    to {
+        background-size: 80%;
+    }
+}
+
+.unclickable {
+    pointer-events: none;
+    background-color: #ccc !important;
+}
